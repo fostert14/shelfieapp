@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "shelfieapp",
     "name": "reactNative",
     "slug": "reactNative",
     "version": "1.0.0",

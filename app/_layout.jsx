@@ -1,19 +1,28 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { Stack } from 'expo-router'
+import { StyleSheet, Text, useColorScheme, View } from "react-native";
+import { Stack } from "expo-router";
+import { Colors } from "../constants/Colors";
 
 const RouteLayout = () => {
-  return ( 
-    <Stack screenOptions={{
-        headerStyle: { backgroundColor: '#ddd' },
-        headerTintColor: '#333',
-    }}>
-        <Stack.Screen name="index" options={{title: 'Home' }} />
-        <Stack.Screen name="about" options={{title: 'About' }} />
-        <Stack.Screen name="contact" options={{title: 'Contact', headerShown: false }} />
+  const colorScheme = useColorScheme();
+  const theme = Colors[colorScheme] ?? Colors.light;
+
+  return (
+    <Stack
+      screenOptions={{
+        headerStyle: { backgroundColor: theme.navBackground },
+        headerTintColor: theme.title,
+      }}
+    >
+      <Stack.Screen name="index" options={{ title: "Home" }} />
+      <Stack.Screen name="about" options={{ title: "About" }} />
+      <Stack.Screen
+        name="contact"
+        options={{ title: "Contact", headerShown: false }}
+      />
     </Stack>
-  )
-}
+  );
+};
 
-export default RouteLayout
+export default RouteLayout;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

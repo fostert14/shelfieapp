@@ -14,13 +14,18 @@ import Spacer from "../../components/Spacer";
 import ThemedText from "../../components/ThemedText";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
+import { useUser } from "../../hooks/useUser";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
-    console.log("Register Form Submitted!", email, password);
+  const { register } = useUser();
+
+  const handleSubmit = async () => {
+    try {
+      await register(email, password);
+    } catch (error) {}
   };
 
   return (

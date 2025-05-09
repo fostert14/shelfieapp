@@ -6,7 +6,7 @@ import { UserProvider } from "../contexts/UserContext";
 
 const RouteLayout = () => {
   const colorScheme = useColorScheme();
-  const theme = Colors[colorScheme] ?? Colors.dark;
+  const theme = Colors[colorScheme] ?? Colors.light;
 
   return (
     <UserProvider>

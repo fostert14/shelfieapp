@@ -2,6 +2,12 @@
   "name": "reactnative",
   "version": "1.0.0",
   "main": "expo-router/entry",
+  "overrides": {
+    "react-native-appwrite": {
+      "expo-file-system": "18.*.*",
+      "react-native": ">=0.76.7 <1.0.0"
+    }
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
